@@ -2,37 +2,28 @@
 
 note for review
 
-## 算法
+[[]]
 
-- 冒泡排序
+- sass less stylus 区别
+- 输入一个 url 到页面之间发生了什么
+- webpack 优化, loader,plugin 是干什么的, webpack 如何构建
+- 链表,树
+- xss, sql 注入
+- 计算在当前可视区 新 api **(IntersectionObserver)** [案例](http://www.qiutianaimeili.com/html/page/2018/08/yhxjx3vx9y.html)
+- 网页直接通过 canvas 生成图片分享 (html2canvas, webview 生成)
+- service woker
+- js 的垃圾回收机制
+- class new 的时候有那几步骤
+- 什么时候会进入堆什么进入栈
+- vue dep watcher
+- vue 虚拟 DOM 与 react 虚拟 DOM 的区别
+- find 方法与 some 方法
+- 快速排序(算法)
+- require 与 import 区别, require 是同步异步
+- webpack 常用的一些插件
+- 防抖与节流
+- web worker 是什么可以做什么
 
-```js
-var arr = [29, 45, 51, 68, 72, 97]
-//外层循环，控制趟数，每一次找到一个最大值
-for (var i = 0; i < arr.length - 1; i++) {
-	// 内层循环,控制比较的次数，并且判断两个数的大小
-	for (var j = 0; j < arr.length - 1 - i; j++) {
-		// 白话解释：如果前面的数大，放到后面(当然是从小到大的冒泡排序)
-		if (arr[j] > arr[j + 1]) {
-			var temp = arr[j]
-			arr[j] = arr[j + 1]
-			arr[j + 1] = temp
-		}
-	}
-}
-console.log(arr) //[2, 4, 5, 12, 31, 32, 45, 52, 78, 89]
-```
-
-- 快速排序
-
-```js
-var arr = [29, 45, 51, 68, 72, 97]
-function quickSort() {
-	let left = []
-	let right = []
-	let middle = arr.splice[Math.floor(arr.length / 2)]
-	for (let i = 0; i < arr.length; i++) {}
-}
-```
+## [算法]('./Algorithm.md)
 
 ## [数组操作](./Array.md)
