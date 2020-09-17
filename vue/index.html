@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="app">
+			<div>{{counter}}</div>
+			<p v-text="counter">123</p>
+			<p v-html="html" @click="abc">123</p>
+		</div>
+		<script src="./define.js"></script>
+		<script>
+			function sum(nums, target) {
+				const _arr = []
+				for (let i = 0; i < nums.length; i++) {
+					for (let j = i + 1; j < nums.length; j++) {
+						if (nums[i] + nums[j] === target) {
+							_arr.push(i, j)
+						}
+					}
+				}
+				return _arr
+			}
+			let arr = []
+			for (let i = 0; i < nums.length; i++) {
+				for (let j = i + 1; j < nums.length; j++) {
+					if (nums[i] + nums[j] === target) {
+						arr.push(i, j)
+					}
+				}
+			}
+			Function.prototype.bindX = function (obj) {
+				const args = Array.prototype.slice.call(arguments, 1)
+				const that = this
+				return function () {
+					const params = Array.prototype.slice.call(arguments)
+					that.apply(obj, args.concat(params))
+				}
+			}
+
+			function add(num1, num2) {
+				return this.value + num1 + num2
+			}
+
+			var data = {
+				value: 1,
+			}
+
+			var addEx = add.bindX(data, 2)
+
+			addEx(3) // 6
+
+			// document.addEventListener
+			// const app = new Vue({
+			// 	el: '#app',
+			// 	data: {
+			// 		counter: 23,
+			// 		html: '<span style="color: red">innerHTML 123</span>',
+			// 	},
+			// 	methods: {
+			// 		abc() {
+			// 			console.log('abc')
+			// 		},
+			// 	},
+			// })
+			// setInterval(() => {
+			// 	// console.log(app)
+			// 	app.counter++
+			// }, 1000)
+		</script>
+	</body>
+</html>

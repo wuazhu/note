@@ -62,8 +62,34 @@ intersectionObserver.observe(document.querySelector('.scrollerFooter'))
 >
 > 2.
 
+- DOM 操作-列表节点替换
+
+```js
+function swap(aNode, bNode) {
+	var aParent = aNode.parentNode
+	var bParent = bNode.parentNode
+	if (aNode && bNode) {
+		var aNode2 = aNode.cloneNode(true) //aNode 没有父节点
+		bParent.replaceChild(aNode2, bNode)
+		aParent.replaceChild(bNode, aNode)
+	}
+}
+window.onload = function () {
+	var bjNode = document.getElementById('bj')
+	var rlNode = document.getElementById('rl')
+	swap(bjNode, rlNode)
+}
+// 2
+//交换dom内容
+function swapDom(from, to) {
+	let temp = a.innerHTML
+	a.innerHTML = b.innerHTML
+	b.innerHTML = temp
+}
+```
+
 - sass less stylus 区别
-- 输入一个 url 到页面之间发生了什么
+- [输入一个 url 到页面之间发生了什么](https://juejin.im/post/6844903592177074183)
 - webpack 优化, loader,plugin 是干什么的, webpack 如何构建
 - 链表,树
 - xss, sql 注入
@@ -71,6 +97,37 @@ intersectionObserver.observe(document.querySelector('.scrollerFooter'))
 - 网页直接通过 canvas 生成图片分享 (html2canvas, webview 生成)
 - service woker
 - js 的垃圾回收机制
+
+> 标记清楚法, 变量在使用的时候会进入标记, 变量不再使用会标记不在使用. 当变量不在使用 js gc 会自动回收.
+
+- vue $attr $listeners
+
+```js
+// components abc
+<template>
+	<div>
+		123
+	</div>
+</template>
+<script>
+export {
+	prop: {
+		a: string,
+		b: string
+	},
+	created() {
+		// 包含所有未声明的属性, 不包含 style 及 class
+		console.log(this.$attrs)
+	}
+}
+</script>
+// 在外部使用
+<abc a="a" b="b" c="c"/>
+```
+
+- Promise
+- 组件循环调用自身
+
 - class new 的时候有那几步骤
 - 什么时候会进入堆什么进入栈
 - vue dep watcher
