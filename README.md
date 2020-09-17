@@ -18,7 +18,7 @@ note for review
 - vue dep watcher
 - vue 虚拟 DOM 与 react 虚拟 DOM 的区别
 - find 方法与 some 方法
-- 快速排序(算法)
+
 - require 与 import 区别, require 是同步异步
 - webpack 常用的一些插件
 - 防抖与节流
